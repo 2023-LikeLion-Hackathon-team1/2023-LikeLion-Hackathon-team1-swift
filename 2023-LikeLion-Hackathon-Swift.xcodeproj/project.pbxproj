@@ -11,6 +11,7 @@
 		487894842A860BA300B2D203 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487894832A860BA300B2D203 /* ContentView.swift */; };
 		487894862A860BA500B2D203 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 487894852A860BA500B2D203 /* Assets.xcassets */; };
 		4878948A2A860BA500B2D203 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 487894892A860BA500B2D203 /* Preview Assets.xcassets */; };
+		487894912A860CD800B2D203 /* MyWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487894902A860CD800B2D203 /* MyWebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,8 @@
 		487894852A860BA500B2D203 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		487894872A860BA500B2D203 /* _023_LikeLion_Hackathon_Swift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = _023_LikeLion_Hackathon_Swift.entitlements; sourceTree = "<group>"; };
 		487894892A860BA500B2D203 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		487894902A860CD800B2D203 /* MyWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWebView.swift; sourceTree = "<group>"; };
+		48CE755A2A860DA90098BB93 /* -023-LikeLion-Hackathon-Swift-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "-023-LikeLion-Hackathon-Swift-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +55,9 @@
 		487894802A860BA300B2D203 /* 2023-LikeLion-Hackathon-Swift */ = {
 			isa = PBXGroup;
 			children = (
+				48CE755A2A860DA90098BB93 /* -023-LikeLion-Hackathon-Swift-Info.plist */,
 				487894812A860BA300B2D203 /* _023_LikeLion_Hackathon_SwiftApp.swift */,
+				487894902A860CD800B2D203 /* MyWebView.swift */,
 				487894832A860BA300B2D203 /* ContentView.swift */,
 				487894852A860BA500B2D203 /* Assets.xcassets */,
 				487894872A860BA500B2D203 /* _023_LikeLion_Hackathon_Swift.entitlements */,
@@ -140,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				487894842A860BA300B2D203 /* ContentView.swift in Sources */,
+				487894912A860CD800B2D203 /* MyWebView.swift in Sources */,
 				487894822A860BA300B2D203 /* _023_LikeLion_Hackathon_SwiftApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,6 +275,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "-023-LikeLion-Hackathon-Swift-Info.plist";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -307,6 +314,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "-023-LikeLion-Hackathon-Swift-Info.plist";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

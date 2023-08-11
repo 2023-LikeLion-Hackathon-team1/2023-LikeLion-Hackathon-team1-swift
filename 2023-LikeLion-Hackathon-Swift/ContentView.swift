@@ -6,16 +6,11 @@
 //
 
 import SwiftUI
+import WebKit
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+        MyWebView(urlToLoad: "https://main--serene-frangipane-9ca84b.netlify.app/")
     }
 }
 
