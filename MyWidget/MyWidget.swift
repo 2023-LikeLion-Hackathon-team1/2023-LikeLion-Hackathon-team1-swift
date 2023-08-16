@@ -140,8 +140,10 @@ struct MyWidgetEntryView : View {
                             .foregroundColor(.white)
                             .padding(.leading, 20)
             }
-            VStack(alignment: .leading) {
-                ForEach(entry.texts.prefix(3), id: \.self) { text in
+            .frame(height: 48)
+            
+            VStack(alignment: .leading, spacing: 10) {
+                ForEach(entry.texts.prefix(4), id: \.self) { text in
                     HStack(alignment: .center, spacing: 20) {
                         Text("Q")
                                 .font(
@@ -158,15 +160,17 @@ struct MyWidgetEntryView : View {
                             .lineSpacing(10)
                             .foregroundColor(.black)
                             .multilineTextAlignment(.leading)
-                                                .lineLimit(3) // 두 줄로 제한
+                            .lineLimit(nil)
                             .padding(.trailing, 14)
+                            .fixedSize(horizontal: false, vertical: true)
                             .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                     }
+                    .padding(.vertical, 5)
 //                    Divider()
                 }
             }
-            .frame(width: 338, height: 48)
-            .offset(x: 0, y: 55)
+            .frame(width: 338, height: 60)
+            .offset(x: 0, y: 120)
             Spacer()
         }
     }
@@ -174,9 +178,11 @@ struct MyWidgetEntryView : View {
     func getFormattedDate() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd MMM yyyy"
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX") // Set locale to English
         let todayDate = Date()
         return dateFormatter.string(from: todayDate)
     }
+
 }
 
 
@@ -189,14 +195,14 @@ struct MyWidget: Widget {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
             MyWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("위젯 예제")
-        .description("랜덤 텍스트를 불러오는 위젯 예제입니다")
+        .configurationDisplayName("CuriousQuest")
+        .description("CuriousQuest 위젯을 사용하여 매일 다양한 질문들을 들어봐요!")
     }
 }
 
 struct MyWidget_Previews: PreviewProvider {
     static var previews: some View {
-        MyWidgetEntryView(entry: SimpleEntry(date: Date(), texts: ["안드로이드 앱 개발을 공부하려면 어떤 순서로 공부해야 하는지 궁금합니다."]))
+        MyWidgetEntryView(entry: SimpleEntry(date: Date(), texts: ["안드로이드 앱 개발을 공부하려면 어떤 순서로 공부해야 하는지 궁금합니다.", "안드로이드 앱 개발을 공부하.", "안드로이드 앱 개발을 공부하려면 어떤 순서로 공부해야 하는지 궁금합니다.", "안드로이드 앱 개발을 공부하려면 어떤 ."]))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
