@@ -8,33 +8,6 @@
 import WidgetKit
 import SwiftUI
 import Intents
-import WebKit
-
-struct WidgetWebView: UIViewRepresentable {
-    
-    
-    var urlToLoad: String
-    
-    //ui view 만들기
-    func makeUIView(context: Context) -> WKWebView {
-        
-        //unwrapping
-        guard let url = URL(string: self.urlToLoad) else {
-            return WKWebView()
-        }
-        //웹뷰 인스턴스 생성
-        let webView = WKWebView()
-        
-        //웹뷰를 로드한다
-        webView.load(URLRequest(url: url))
-        return webView
-    }
-    
-    //업데이트 ui view
-    func updateUIView(_ uiView: WKWebView, context: UIViewRepresentableContext<WidgetWebView>) {
-        
-    }
-}
 
 struct Provider: IntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
@@ -158,7 +131,6 @@ struct MyWidgetEntryView : View {
             VStack(alignment: .leading, spacing: 8) {
                 ForEach(entry.texts.prefix(5), id: \.self) { text in
                     HStack(alignment: .top, spacing: 20) {
-                        
                         Text(text)
                             .font(
                                 Font.custom("Neue Haas Grotesk Display Pro", size: 16).weight(.medium)
