@@ -12,7 +12,40 @@
 		487894862A860BA500B2D203 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 487894852A860BA500B2D203 /* Assets.xcassets */; };
 		4878948A2A860BA500B2D203 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 487894892A860BA500B2D203 /* Preview Assets.xcassets */; };
 		487894912A860CD800B2D203 /* MyWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487894902A860CD800B2D203 /* MyWebView.swift */; };
+		48EAA02B2A8BC80100176905 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48EAA02A2A8BC80100176905 /* WidgetKit.framework */; };
+		48EAA02D2A8BC80100176905 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48EAA02C2A8BC80100176905 /* SwiftUI.framework */; };
+		48EAA0302A8BC80100176905 /* MyWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EAA02F2A8BC80100176905 /* MyWidgetBundle.swift */; };
+		48EAA0322A8BC80100176905 /* MyWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EAA0312A8BC80100176905 /* MyWidgetLiveActivity.swift */; };
+		48EAA0342A8BC80100176905 /* MyWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EAA0332A8BC80100176905 /* MyWidget.swift */; };
+		48EAA0372A8BC80200176905 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48EAA0362A8BC80200176905 /* Assets.xcassets */; };
+		48EAA0392A8BC80200176905 /* MyWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 48EAA0352A8BC80100176905 /* MyWidget.intentdefinition */; };
+		48EAA03A2A8BC80200176905 /* MyWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 48EAA0352A8BC80100176905 /* MyWidget.intentdefinition */; };
+		48EAA03D2A8BC80200176905 /* MyWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 48EAA0282A8BC80100176905 /* MyWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		48EAA03B2A8BC80200176905 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 487894762A860BA300B2D203 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 48EAA0272A8BC80100176905;
+			remoteInfo = MyWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		48EAA03E2A8BC80200176905 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				48EAA03D2A8BC80200176905 /* MyWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4878947E2A860BA300B2D203 /* 2023-LikeLion-Hackathon-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "2023-LikeLion-Hackathon-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -23,6 +56,15 @@
 		487894892A860BA500B2D203 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		487894902A860CD800B2D203 /* MyWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWebView.swift; sourceTree = "<group>"; };
 		48CE755A2A860DA90098BB93 /* -023-LikeLion-Hackathon-Swift-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "-023-LikeLion-Hackathon-Swift-Info.plist"; sourceTree = SOURCE_ROOT; };
+		48EAA0282A8BC80100176905 /* MyWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MyWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		48EAA02A2A8BC80100176905 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		48EAA02C2A8BC80100176905 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		48EAA02F2A8BC80100176905 /* MyWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWidgetBundle.swift; sourceTree = "<group>"; };
+		48EAA0312A8BC80100176905 /* MyWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWidgetLiveActivity.swift; sourceTree = "<group>"; };
+		48EAA0332A8BC80100176905 /* MyWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWidget.swift; sourceTree = "<group>"; };
+		48EAA0352A8BC80100176905 /* MyWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = MyWidget.intentdefinition; sourceTree = "<group>"; };
+		48EAA0362A8BC80200176905 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		48EAA0382A8BC80200176905 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +75,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		48EAA0252A8BC80100176905 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48EAA02D2A8BC80100176905 /* SwiftUI.framework in Frameworks */,
+				48EAA02B2A8BC80100176905 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -40,6 +91,8 @@
 			isa = PBXGroup;
 			children = (
 				487894802A860BA300B2D203 /* 2023-LikeLion-Hackathon-Swift */,
+				48EAA02E2A8BC80100176905 /* MyWidget */,
+				48EAA0292A8BC80100176905 /* Frameworks */,
 				4878947F2A860BA300B2D203 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				4878947E2A860BA300B2D203 /* 2023-LikeLion-Hackathon-Swift.app */,
+				48EAA0282A8BC80100176905 /* MyWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -74,6 +128,28 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		48EAA0292A8BC80100176905 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				48EAA02A2A8BC80100176905 /* WidgetKit.framework */,
+				48EAA02C2A8BC80100176905 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		48EAA02E2A8BC80100176905 /* MyWidget */ = {
+			isa = PBXGroup;
+			children = (
+				48EAA02F2A8BC80100176905 /* MyWidgetBundle.swift */,
+				48EAA0312A8BC80100176905 /* MyWidgetLiveActivity.swift */,
+				48EAA0332A8BC80100176905 /* MyWidget.swift */,
+				48EAA0352A8BC80100176905 /* MyWidget.intentdefinition */,
+				48EAA0362A8BC80200176905 /* Assets.xcassets */,
+				48EAA0382A8BC80200176905 /* Info.plist */,
+			);
+			path = MyWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -84,15 +160,34 @@
 				4878947A2A860BA300B2D203 /* Sources */,
 				4878947B2A860BA300B2D203 /* Frameworks */,
 				4878947C2A860BA300B2D203 /* Resources */,
+				48EAA03E2A8BC80200176905 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				48EAA03C2A8BC80200176905 /* PBXTargetDependency */,
 			);
 			name = "2023-LikeLion-Hackathon-Swift";
 			productName = "2023-LikeLion-Hackathon-Swift";
 			productReference = 4878947E2A860BA300B2D203 /* 2023-LikeLion-Hackathon-Swift.app */;
 			productType = "com.apple.product-type.application";
+		};
+		48EAA0272A8BC80100176905 /* MyWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48EAA0412A8BC80200176905 /* Build configuration list for PBXNativeTarget "MyWidgetExtension" */;
+			buildPhases = (
+				48EAA0242A8BC80100176905 /* Sources */,
+				48EAA0252A8BC80100176905 /* Frameworks */,
+				48EAA0262A8BC80100176905 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyWidgetExtension;
+			productName = MyWidgetExtension;
+			productReference = 48EAA0282A8BC80100176905 /* MyWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -105,6 +200,9 @@
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					4878947D2A860BA300B2D203 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					48EAA0272A8BC80100176905 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
 				};
@@ -123,6 +221,7 @@
 			projectRoot = "";
 			targets = (
 				4878947D2A860BA300B2D203 /* 2023-LikeLion-Hackathon-Swift */,
+				48EAA0272A8BC80100176905 /* MyWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -137,6 +236,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		48EAA0262A8BC80100176905 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48EAA0372A8BC80200176905 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -144,13 +251,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48EAA03A2A8BC80200176905 /* MyWidget.intentdefinition in Sources */,
 				487894842A860BA300B2D203 /* ContentView.swift in Sources */,
 				487894912A860CD800B2D203 /* MyWebView.swift in Sources */,
 				487894822A860BA300B2D203 /* _023_LikeLion_Hackathon_SwiftApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		48EAA0242A8BC80100176905 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48EAA0392A8BC80200176905 /* MyWidget.intentdefinition in Sources */,
+				48EAA0322A8BC80100176905 /* MyWidgetLiveActivity.swift in Sources */,
+				48EAA0302A8BC80100176905 /* MyWidgetBundle.swift in Sources */,
+				48EAA0342A8BC80100176905 /* MyWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		48EAA03C2A8BC80200176905 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 48EAA0272A8BC80100176905 /* MyWidgetExtension */;
+			targetProxy = 48EAA03B2A8BC80200176905 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		4878948B2A860BA500B2D203 /* Debug */ = {
@@ -265,6 +392,7 @@
 		4878948E2A860BA500B2D203 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "2023-LikeLion-Hackathon-Swift/_023_LikeLion_Hackathon_Swift.entitlements";
@@ -304,6 +432,7 @@
 		4878948F2A860BA500B2D203 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "2023-LikeLion-Hackathon-Swift/_023_LikeLion_Hackathon_Swift.entitlements";
@@ -340,6 +469,65 @@
 			};
 			name = Release;
 		};
+		48EAA03F2A8BC80200176905 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8TK82UJX79;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MyWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "hyelim.-023-LikeLion-Hackathon-Swift.MyWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		48EAA0402A8BC80200176905 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8TK82UJX79;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MyWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "hyelim.-023-LikeLion-Hackathon-Swift.MyWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -357,6 +545,15 @@
 			buildConfigurations = (
 				4878948E2A860BA500B2D203 /* Debug */,
 				4878948F2A860BA500B2D203 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48EAA0412A8BC80200176905 /* Build configuration list for PBXNativeTarget "MyWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48EAA03F2A8BC80200176905 /* Debug */,
+				48EAA0402A8BC80200176905 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

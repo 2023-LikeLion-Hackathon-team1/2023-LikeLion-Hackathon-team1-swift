@@ -10,7 +10,7 @@ import WebKit
 
 struct ContentView: View {
     var body: some View {
-        MyWebView(urlToLoad: "https://main--serene-frangipane-9ca84b.netlify.app/")
+        MyWebView(urlToLoad: "https://likelion-hackathon-2023.netlify.app/")
     }
 }
 
