@@ -16,8 +16,8 @@ struct Provider: IntentTimelineProvider {
     
     
     func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        getTexts { Question in
-            let QuestionTitles = Question.map { $0.question_title }
+        getTexts { questions in
+            let QuestionTitles = questions.map { $0.question_title }
             let entry = SimpleEntry(date: Date(), texts: QuestionTitles)
             completion(entry)
         }
@@ -25,9 +25,8 @@ struct Provider: IntentTimelineProvider {
     }
     
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        getTexts { Question in
-
-            let QuestionTitles = Question.map { $0.question_title }
+        getTexts { questions in
+            let QuestionTitles = questions.map { $0.question_title }
             print(QuestionTitles)
             let currentDate = Date()
             let entry = SimpleEntry(date: currentDate, texts: QuestionTitles)
@@ -38,7 +37,7 @@ struct Provider: IntentTimelineProvider {
     }
     
     // add
-    private func getTexts(completion: @escaping ([Question]) -> ()) {
+    private func getTexts(completion: @escaping ([QuestionWid]) -> ()) {
         guard let url = URL(string: "http://27.96.134.196:8080/questions/all-list/1") else {
             print("Invalid URL")
             return
@@ -57,8 +56,8 @@ struct Provider: IntentTimelineProvider {
             }
 
             do {
-                let Question = try JSONDecoder().decode([Question].self, from: data)
-                completion(Question)
+                let questions = try JSONDecoder().decode([QuestionWid].self, from: data)
+                completion(questions)
             } catch {
                 print("Decoding error: \(error)")
             }
@@ -100,7 +99,7 @@ struct TextModel: Codable {
 //    let wikipedia: String?
 //}
 
-struct Question: Codable {
+struct QuestionWid: Codable {
     let question_id: Int
     let category_id: Int
     let questioner_id: Int
@@ -172,7 +171,7 @@ struct MyWidgetEntryView : View {
             .frame(width: 338, height: 60)
             .offset(x: 0, y: 120)
             Spacer()
-        }
+        }.background(Color(red: 1, green: 1, blue: 1))
     }
     
     func getFormattedDate() -> String {
