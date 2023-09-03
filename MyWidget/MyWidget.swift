@@ -11,14 +11,15 @@ import Intents
 
 struct Provider: IntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), texts: ["empty"])
+        SimpleEntry(date: Date(), texts: ["empty"], contents: ["empty"])
     }
     
     
     func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
         getTexts { questions in
             let QuestionTitles = questions.map { $0.question_title }
-            let entry = SimpleEntry(date: Date(), texts: QuestionTitles)
+            let QuestionContents = questions.map { $0.question_content }
+            let entry = SimpleEntry(date: Date(), texts: QuestionTitles, contents: QuestionContents)
             completion(entry)
         }
         
@@ -27,9 +28,11 @@ struct Provider: IntentTimelineProvider {
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         getTexts { questions in
             let QuestionTitles = questions.map { $0.question_title }
+//            let QuestionContents = questions.map { $0.question_content }
+            let QuestionContents = questions.map { String($0.question_content.prefix(20)) }
             print(QuestionTitles)
             let currentDate = Date()
-            let entry = SimpleEntry(date: currentDate, texts: QuestionTitles)
+            let entry = SimpleEntry(date: currentDate, texts: QuestionTitles, contents: QuestionContents)
             let nextRefresh = Calendar.current.date(byAdding: .minute, value: 3, to: currentDate)!
             let timeline = Timeline(entries: [entry], policy: .after(nextRefresh))
             completion(timeline)
@@ -38,7 +41,7 @@ struct Provider: IntentTimelineProvider {
     
     // add
     private func getTexts(completion: @escaping ([QuestionWid]) -> ()) {
-        guard let url = URL(string: "http://27.96.134.196:8080/questions/all-list/1") else {
+        guard let url = URL(string: "http://27.96.134.196:8080/questions/questions-list-inLike/17/1") else {
             print("Invalid URL")
             return
         }
@@ -70,6 +73,7 @@ struct Provider: IntentTimelineProvider {
 struct SimpleEntry: TimelineEntry {
     let date: Date
     let texts: [String]
+    let contents: [String]
 }
 
 struct TextModel: Codable {
@@ -131,10 +135,10 @@ struct MyWidgetEntryView : View {
                     .foregroundColor(.clear)
                     .frame(width: 338, height: 48)
                     .background(Color(red: 0.17, green: 0.89, blue: 0.47))
-                Text(getFormattedDate()) // 여기에 날짜가 들어갑니다.
+                Text("지금, 이 질문 어때요?")
                             .font(
                                 Font.custom("SUIT", size: 18)
-                                    .weight(.semibold)
+                                    .weight(.bold)
                             )
                             .foregroundColor(.white)
                             .padding(.leading, 20)
@@ -142,7 +146,7 @@ struct MyWidgetEntryView : View {
             .frame(height: 48)
             
             VStack(alignment: .leading, spacing: 10) {
-                ForEach(entry.texts.prefix(4), id: \.self) { text in
+                ForEach([0, 1], id: \.self) { index in
                     HStack(alignment: .center, spacing: 20) {
                         Text("Q")
                                 .font(
@@ -152,19 +156,36 @@ struct MyWidgetEntryView : View {
                                 .padding(.leading, 14) // 아이콘 위치 조정
                                 .frame(width: 40)
                         
-                        Text(text)
-                            .font(
-                                Font.custom("Neue Haas Grotesk Display Pro", size: 16).weight(.medium)
-                            )
-                            .lineSpacing(10)
-                            .foregroundColor(.black)
-                            .multilineTextAlignment(.leading)
-                            .lineLimit(nil)
-                            .padding(.trailing, 14)
-                            .fixedSize(horizontal: false, vertical: true)
-                            .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                        VStack {
+                            Text(entry.texts[index])
+                                .font(
+                                    Font.custom("Neue Haas Grotesk Display Pro", size: 16).weight(.medium)
+                                )
+                                .lineSpacing(5)
+                                .foregroundColor(.black)
+                                .multilineTextAlignment(.leading)
+                                .lineLimit(nil)
+                                .padding(.trailing, 14)
+                                .fixedSize(horizontal: false, vertical: true)
+                                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                                
+                            Spacer().frame(height: 12)
+                                
+                            Text(entry.contents[index])
+                                .font(
+                                    Font.custom("Neue Haas Grotesk Display Pro", size: 12).weight(.medium)
+                                )
+                                .lineSpacing(10)
+                                .foregroundColor(.gray)
+                                .multilineTextAlignment(.leading)
+                                .lineLimit(nil)
+                                .padding(.trailing, 14)
+                                .fixedSize(horizontal: false, vertical: true)
+                                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                            
+                        }
                     }
-                    .padding(.vertical, 5)
+                    .padding(.vertical, 12)
 //                    Divider()
                 }
             }
@@ -201,7 +222,7 @@ struct MyWidget: Widget {
 
 struct MyWidget_Previews: PreviewProvider {
     static var previews: some View {
-        MyWidgetEntryView(entry: SimpleEntry(date: Date(), texts: ["안드로이드 앱 개발을 공부하려면 어떤 순서로 공부해야 하는지 궁금합니다.", "안드로이드 앱 개발을 공부하.", "안드로이드 앱 개발을 공부하려면 어떤 순서로 공부해야 하는지 궁금합니다.", "안드로이드 앱 개발을 공부하려면 어떤 ."]))
+        MyWidgetEntryView(entry: SimpleEntry(date: Date(), texts: ["안드로이드 앱 개발을 공부하려면 어떤 순서로 공부해야 하는지 궁금합니다.", "안드로이드 앱 개발을 공부하.", "안드로이드 앱 개발을 공부하려면 어떤 순서로 공부해야 하는지 궁금합니다.", "안드로이드 앱 개발을 공부하려면 어떤 ."], contents: ["안드로이드 앱 개발을 공부하려면 어떤 .", "empty", "empty", "empty"]))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
